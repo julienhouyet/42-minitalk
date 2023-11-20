@@ -6,13 +6,13 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:52 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/20 12:23:32 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:02:15 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int main(void)
+int	main(void)
 {
 	return (0);
 }

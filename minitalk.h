@@ -6,12 +6,12 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:41 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/20 12:22:03 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:01:43 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK
-# define MINITALK
+#ifndef MINITALK_H
+# define MINITALK_H
 
 # include "libft/libft.h"
 
