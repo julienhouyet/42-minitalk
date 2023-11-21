@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 10:05:40 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/21 11:09:34 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,26 @@ int	ft_atoi(const char *str)
 
 void	send_msg(int pid, char *str)
 {
-	ft_printf("PID : %d\nMessage : %s", pid, str);
-	kill(pid, SIGUSR1);
+	int	size;
+	int	i;
+	int bit;
+
+	size = ft_strlen(str);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		bit = 0;
+		while (bit < 7)
+		{
+			if ((str[i] >> bit) & 1)
+				kill(pid, SIGUSR2);
+			else
+				kill(pid, SIGUSR1);
+			bit++;
+		}
+		usleep(400);
+		i++;
+	}
 }
 
 int main(int argc, char *argv[])
@@ -61,6 +79,6 @@ int main(int argc, char *argv[])
 	else
 	{
 		ft_printf("Vous devez entrer un message au format : PID_NUMBER \"MESSAGE\"\n\n");
-		ft_printf("Exemple : 457896 \"Bonjour server\"\n\n");
+		ft_printf("Exemple : 72343 \"Bonjour server\"\n\n");
 	}
 }
