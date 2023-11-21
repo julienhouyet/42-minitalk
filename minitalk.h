@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:41 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 09:37:31 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/21 10:02:50 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <sys/types.h>
 # include <unistd.h>
 # include <signal.h>
+# include <limits.h>
 
 # include "ft_printf/ft_printf.h"
 
