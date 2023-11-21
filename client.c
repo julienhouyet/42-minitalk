@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 11:09:34 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:58:16 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,24 @@ void	send_msg(int pid, char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		bit = 0;
-		while (bit < 7)
+		bit = 7;
+		while (bit > -1)
 		{
 			if ((str[i] >> bit) & 1)
+			{
 				kill(pid, SIGUSR2);
+				ft_printf("1");
+			}
 			else
+			{
 				kill(pid, SIGUSR1);
-			bit++;
+				ft_printf("0");
+			}
+			bit--;
 		}
-		usleep(400);
 		i++;
+		ft_printf("\n");
+		usleep(300);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:52 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 09:09:27 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/21 14:22:31 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	sig_reception(int sig)
 {
 	if (sig == SIGUSR1)
 	{
-		ft_printf("Received SIGUSR1\n");
+		ft_printf("0\n");
 	}
 	else if (sig == SIGUSR2)
 	{
-		ft_printf("Received SIGUSR2\n");
+		ft_printf("1\n");
 	}
 }
 
