@@ -6,13 +6,13 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 14:58:16 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/22 13:29:21 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-int	ft_atoi(const char *str)
+static int	ft_atoi(const char *str)
 {
 	int				i;
 	int				neg;
@@ -45,7 +45,7 @@ void	send_msg(int pid, char *str)
 {
 	int	size;
 	int	i;
-	int bit;
+	int	bit;
 
 	size = ft_strlen(str);
 	i = 0;
@@ -55,24 +55,17 @@ void	send_msg(int pid, char *str)
 		while (bit > -1)
 		{
 			if ((str[i] >> bit) & 1)
-			{
 				kill(pid, SIGUSR2);
-				ft_printf("1");
-			}
 			else
-			{
 				kill(pid, SIGUSR1);
-				ft_printf("0");
-			}
 			bit--;
+			usleep(100);
 		}
 		i++;
-		ft_printf("\n");
-		usleep(300);
 	}
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	int		pid;
 	char	*str;
@@ -85,7 +78,8 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		ft_printf("Vous devez entrer un message au format : PID_NUMBER \"MESSAGE\"\n\n");
+		ft_printf("Vous devez entrer un message au format\n\n");
 		ft_printf("Exemple : 72343 \"Bonjour server\"\n\n");
 	}
+	return (0);
 }

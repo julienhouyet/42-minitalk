@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:52 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 14:22:31 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/22 12:05:09 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,36 @@
 
 void	sig_reception(int sig)
 {
+	static int				count_bits;
+	static unsigned char	current_byte;
+
+	if (count_bits == 0) 
+		count_bits = 0;
 	if (sig == SIGUSR1)
 	{
-		ft_printf("0\n");
+		current_byte = (current_byte << 1) | 0;
+		count_bits++;
 	}
 	else if (sig == SIGUSR2)
 	{
-		ft_printf("1\n");
+		current_byte = (current_byte << 1) | 1;
+		count_bits++;
+	}
+	if (count_bits > 7)
+	{
+		ft_printf("%c", current_byte);
+		count_bits = 0;
+		current_byte = 0;
 	}
 }
 
 int	main(void)
 {
 	ft_printf("Tera Dev Server PID: %d\n", getpid());
-	signal(SIGUSR1, sig_reception);
-	signal(SIGUSR2, sig_reception);
 	while (1)
 	{
+		signal(SIGUSR2, sig_reception);
+		signal(SIGUSR1, sig_reception);
 		pause();
 	}
 	return (0);
