@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/22 13:29:21 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:05:57 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	send_msg(int pid, char *str)
 	int	bit;
 
 	size = ft_strlen(str);
+	str[size] = '\n';
+	str[size + 1] = '\0';
 	i = 0;
 	while (str[i] != '\0')
 	{
