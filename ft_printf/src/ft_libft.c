@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_libft.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhouyet <jhouyet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:29:26 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/08 15:19:15 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/21 09:41:48 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "include/ft_printf.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -44,7 +44,7 @@ void	ft_putstr_fd(char *s, int fd)
 	write(fd, s, ft_strlen(s));
 }
 
-void	ft_puthexa_fd(unsigned long nb, char var, int fd)
+void	ft_puthexa_fd(unsigned int nb, char var, int fd)
 {
 	if (nb >= 16)
 	{

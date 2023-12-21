@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_count.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhouyet <jhouyet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:27:24 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/08 12:41:58 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/21 09:42:03 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "include/ft_printf.h"
 
 int	ft_count_nbr(int nb)
 {
@@ -52,7 +54,7 @@ int	ft_count_nbr_unsigned(unsigned int nb)
 	return (count);
 }
 
-int	ft_count_hexa(unsigned long nb)
+int	ft_count_hexa(unsigned int nb)
 {
 	int	count;
 

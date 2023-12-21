@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_number.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhouyet <jhouyet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 08:47:08 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/08 15:19:49 by jhouyet          ###   ########.fr       */
+/*   Created: 2023/11/08 07:53:16 by jhouyet           #+#    #+#             */
+/*   Updated: 2023/12/21 09:42:08 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "include/ft_printf.h"
 
-int	ft_printf_char(va_list arg)
+int	ft_printf_number(va_list *arg)
 {
-	char	c;
+	int	nb;
+	int	count;
 
-	c = va_arg(arg, int);
-	ft_putchar_fd(c, 1);
-	return (1);
+	nb = va_arg(*arg, int);
+	count = ft_count_nbr(nb);
+	ft_putnbr_fd(nb, 1);
+	return (count);
 }

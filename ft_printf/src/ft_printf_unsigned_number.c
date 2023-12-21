@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf_unsigned_number.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 10:02:41 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/21 10:02:50 by jhouyet          ###   ########.fr       */
+/*   Created: 2023/11/08 07:53:28 by jhouyet           #+#    #+#             */
+/*   Updated: 2023/12/21 09:42:15 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
-# include <sys/types.h>
-# include <unistd.h>
-# include <signal.h>
-# include <limits.h>
+#include "include/ft_printf.h"
 
-# include "ft_printf/ft_printf.h"
+int	ft_printf_unsigned_number(va_list *arg)
+{
+	unsigned int	nb;
+	int				count;
 
-#endif
+	nb = va_arg(*arg, unsigned int);
+	count = ft_count_nbr_unsigned(nb);
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, 1);
+		ft_putnbr_fd(nb % 10, 1);
+	}
+	else
+		ft_putchar_fd(nb + '0', 1);
+	return (count);
+}

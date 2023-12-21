@@ -6,11 +6,11 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 10:02:52 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/22 12:05:09 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/21 10:21:21 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "include/minitalk.h"
 
 void	sig_reception(int sig)
 {

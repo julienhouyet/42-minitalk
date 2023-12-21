@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_number.c                                 :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhouyet <jhouyet@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 07:53:16 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/11/08 13:59:42 by jhouyet          ###   ########.fr       */
+/*   Created: 2023/11/20 10:02:41 by jhouyet           #+#    #+#             */
+/*   Updated: 2023/12/21 10:20:04 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef MINITALK_H
+# define MINITALK_H
+# include <sys/types.h>
+# include <unistd.h>
+# include <signal.h>
+# include <limits.h>
 
-int	ft_printf_number(va_list arg)
-{
-	int	nb;
-	int	count;
+# include "ft_printf/include/ft_printf.h"
 
-	nb = va_arg(arg, int);
-	count = ft_count_nbr(nb);
-	ft_putnbr_fd(nb, 1);
-	return (count);
-}
+#endif
