@@ -65,4 +65,4 @@ $ make fclean
 ##  :lock: License
 
 GNU GENERAL PUBLIC LICENSE
-Version 3
+Version 3.
